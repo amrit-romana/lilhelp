@@ -202,9 +202,55 @@
     });
   }
 
+  /* -------------------------------------------------------
+     Cursor zone: inside this section the pointer is replaced
+     by the legs, which is what the pinned companion does on
+     the desktop. Pointer-coarse and reduced-motion opt out.
+     ------------------------------------------------------- */
+  function cursorZone(zone) {
+    var ghost = zone.querySelector('[data-ghost]');
+    var legs = ghost && ghost.querySelector('[data-legs]');
+    if (!ghost || !fine.matches || reduce.matches) return;
+
+    var tx = 0, ty = 0, x = 0, y = 0, moving = 0, raf = null;
+
+    zone.classList.add('live');
+
+    zone.addEventListener('pointermove', function (e) {
+      var r = zone.getBoundingClientRect();
+      tx = e.clientX - r.left;
+      ty = e.clientY - r.top;
+      moving = Date.now();
+      if (!raf) raf = requestAnimationFrame(step);
+    });
+    zone.addEventListener('pointerleave', function () {
+      zone.classList.remove('live');
+    });
+    zone.addEventListener('pointerenter', function () {
+      zone.classList.add('live');
+    });
+
+    function step() {
+      var dx = tx - x;
+      var dy = ty - y;
+      x += dx * 0.28;
+      y += dy * 0.28;
+      ghost.style.transform = 'translate(' + x + 'px,' + y + 'px) scaleX(' + (dx < -0.6 ? -1 : 1) + ')';
+
+      if (legs) {
+        var speed = Math.abs(dx) + Math.abs(dy);
+        if (speed > 22) legs.setAttribute('data-st', 'working');
+        else if (speed > 1.5) legs.setAttribute('data-st', 'trot');
+        else if (Date.now() - moving > 360) legs.setAttribute('data-st', 'idle');
+      }
+      raf = requestAnimationFrame(step);
+    }
+  }
+
   function init() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-bar]'), presenceBar);
     Array.prototype.forEach.call(document.querySelectorAll('[data-companion]'), companion);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-cursor-zone]'), cursorZone);
     rows();
   }
 
