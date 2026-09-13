@@ -1,0 +1,437 @@
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Desktop assistant · macOS</p>
+      <h1 class="h-dual">Done is useful.<span>Done your way is better.</span></h1>
+      <p class="lede">lil'&nbsp;help sits over your work, runs up to four jobs at once, and learns
+        the way you like things done. It tells you how sure it is, and it stops dead before
+        anything it can't undo.</p>
+      <div class="hero-cta">
+        <a class="btn btn-lg" href="/download">Download for macOS</a>
+        <a class="btn btn-lg btn-ghost" href="/what-it-does">See what it does</a>
+      </div>
+      <p class="hero-note">macOS 15 or later · Free while in beta</p>
+    </div>
+
+    <!-- presence bar: the legs stand where the status ring used to -->
+    <div>
+      <div class="desk">
+        <div class="desk-win a" aria-hidden="true">
+          <div class="desk-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+          <div class="desk-lines">
+            <i style="width:82%"></i><i style="width:66%"></i><i style="width:73%"></i><i style="width:40%"></i>
+          </div>
+        </div>
+        <div class="desk-win b" aria-hidden="true">
+          <div class="desk-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+          <div class="desk-lines">
+            <i style="width:58%"></i><i style="width:88%"></i><i style="width:47%"></i>
+          </div>
+        </div>
+
+        <div class="bar" data-bar data-st="working" role="group" aria-label="Presence bar, live preview">
+          <span class="bar-legs" data-legs data-st="working" data-px="30"></span>
+          <div class="lane" data-lane aria-live="polite"></div>
+
+          <div class="chips" aria-label="Conversations">
+            <button class="chip-agent" type="button" aria-pressed="true" aria-label="Conversation 1, working">1<i class="work"></i></button>
+            <button class="chip-agent" type="button" aria-pressed="false" aria-label="Conversation 2">2</button>
+            <button class="chip-agent" type="button" aria-pressed="false" aria-label="Conversation 3, working">3<i class="work"></i></button>
+          </div>
+
+          <div class="bar-ctl">
+            <button class="ib" type="button" aria-pressed="false" title="Pin to cursor" aria-label="Pin to cursor">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 2h6l-1 6 3 3v2H7v-2l3-3z"/></svg>
+            </button>
+            <button class="ib" type="button" title="Open chat" aria-label="Open chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <button class="ib" type="button" title="New conversation" aria-label="New conversation">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <button class="ib" type="button" title="Tuck away" aria-label="Tuck away">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="driver">
+        <span class="driver-lbl">Drive it</span>
+        <button class="sbtn" type="button" data-go="watching">watching</button>
+        <button class="sbtn" type="button" data-go="listening">listening</button>
+        <button class="sbtn" type="button" data-go="thinking">thinking</button>
+        <button class="sbtn" type="button" data-go="working" aria-pressed="true">working</button>
+        <button class="sbtn" type="button" data-go="done">done</button>
+        <button class="sbtn" type="button" data-go="halt">high stakes</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOW IT WHAT GOOD LOOKS LIKE ============ -->
+<section class="sec band-grey">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Teach once</p>
+      <h2 class="h-lg">Show it what good looks like.</h2>
+      <p class="sub">Correct it once and the correction sticks. Everything it learns is written
+        down in plain words on a page you can open, edit and empty.</p>
+    </div>
+
+    <div class="mock">
+      <div class="mock-top">
+        <span class="mock-title">Memory</span>
+        <span class="mono" style="margin-left:auto;font-size:.75rem;color:var(--muted)">128 facts · 41 people · 9 threads</span>
+      </div>
+      <div class="mock-body">
+        <div class="mock-left">
+          <div class="fact">
+            <p>Ships on Thursdays. Avoids deploying on a Friday.</p>
+            <div class="conf"><b><i class="on"></i><i class="on"></i><i class="on"></i></b> very sure</div>
+          </div>
+          <div class="fact">
+            <p>Prefers a written summary over a call recap for anything under fifteen minutes.</p>
+            <div class="conf"><b><i class="on"></i><i class="on"></i><i></i></b> fairly sure</div>
+          </div>
+          <div class="fact">
+            <p>Owns the billing relationship with Figma.</p>
+            <div class="conf"><b><i class="on"></i><i></i><i></i></b> a guess</div>
+          </div>
+        </div>
+        <div class="mock-right">
+          <p class="eyebrow">Your standard</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+            <li style="font-size:.875rem;color:var(--ink-2)">British spelling in anything customer-facing</li>
+            <li style="font-size:.875rem;color:var(--ink-2)">Commit messages stay on one line</li>
+            <li style="font-size:.875rem;color:var(--ink-2)">Never book before 09:30</li>
+          </ul>
+          <p style="font-size:.8125rem;color:var(--muted);margin-top:auto">Learned from how you work. Switch any of them off, or all of them at once.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATE RAIL ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">One turn, start to finish</p>
+      <h2 class="h-lg">You can tell what it's doing without asking.</h2>
+      <p class="sub">The legs carry the state and the bar says it in plain words. Nothing here is
+        a spinner that means five different things.</p>
+    </div>
+    <div class="rail">
+      <div class="rail-item">
+        <span class="rail-n">01</span>
+        <span class="rail-legs" data-legs data-st="watching" data-px="34"></span>
+        <h3>Watching</h3>
+        <p>Available, nothing running. It shifts its weight and waits.</p>
+        <span class="rail-say">Ready when you are</span>
+      </div>
+      <div class="rail-item">
+        <span class="rail-n">02</span>
+        <span class="rail-legs" data-legs data-st="listening" data-px="34"></span>
+        <h3>Listening</h3>
+        <p>Waveform moves with your voice. Controls compress to make room. Type instead, any time.</p>
+        <span class="rail-say">Listening…</span>
+      </div>
+      <div class="rail-item">
+        <span class="rail-n">03</span>
+        <span class="rail-legs" data-legs data-st="thinking" data-px="34"></span>
+        <h3>Thinking</h3>
+        <p>One foot tapping while it works out the approach.</p>
+        <span class="rail-say">Thinking…</span>
+      </div>
+      <div class="rail-item">
+        <span class="rail-n">04</span>
+        <span class="rail-legs" data-legs data-st="working" data-px="34"></span>
+        <h3>Working</h3>
+        <p>Names the tool it's using and counts the seconds. Back to thinking between steps.</p>
+        <span class="rail-say">Reading your calendar · 0:07</span>
+      </div>
+      <div class="rail-item">
+        <span class="rail-n">05</span>
+        <span class="rail-legs" data-legs data-st="done" data-px="34"></span>
+        <h3>Done</h3>
+        <p>A tick, one second of pride, then back to the compact bar.</p>
+        <span class="rail-say">Done</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIGH STAKES (dark band) ============ -->
+<section class="sec band-dark on-dark">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Before anything irreversible</p>
+      <h2 class="h-lg">It goes still exactly when you'd want a person to stop talking.</h2>
+      <p class="lede">Deleting a folder. Sending to a list. Paying an invoice. The legs plant,
+        the motion drains out of the frame, and nothing happens until you say so. Destructive
+        actions need a second click, and the confirmation expires after four seconds.</p>
+      <div class="hero-cta">
+        <a class="btn" href="/character">How the character works</a>
+      </div>
+    </div>
+    <div style="display:grid;place-items:center;padding:20px">
+      <span data-legs data-st="halt" data-px="150" style="width:clamp(120px,18vw,170px);height:clamp(120px,18vw,170px)"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONE INTERFACE ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center">
+      <h2 class="h-lg">One interface. Your whole working world.</h2>
+      <p class="sub">It reaches the tools you already pay for, and asks before it connects
+        to any of them.</p>
+    </div>
+    <div class="hub">
+      <div class="hub-list">
+        <span>Calendar</span><span>Mail</span><span>Drive</span><span>Slack</span><span>Notion</span>
+      </div>
+      <div class="hub-core">
+        <span class="brand-legs" data-legs data-st="working" data-px="38" aria-hidden="true"></span>
+      </div>
+      <div class="hub-list right">
+        <span>Linear</span><span>GitHub</span><span>Figma</span><span>Reminders</span><span>Browser</span>
+      </div>
+    </div>
+    <p class="sub" style="text-align:center;margin:30px auto 0">A searchable catalog, grouped by
+      category, with capability counts on each. Disconnect any of them in one click.</p>
+  </div>
+</section>
+
+<!-- ============ IT FOLLOWS YOUR RULES ============ -->
+<section class="sec band-grey">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Carry-over</p>
+      <h2 class="h-lg">The next task begins with what the last one taught.</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <h3>It follows your rules</h3>
+        <p>Instructions it picked up from watching you work, each stored with the example that
+          taught it and how many times it has seen the pattern.</p>
+        <ul>
+          <li>Filter by category, or read the lot</li>
+          <li>Stop using one rule, or switch them all off</li>
+        </ul>
+        <p class="cap">Rules · learned, never invented</p>
+      </div>
+      <div class="card">
+        <h3>It says how sure it is</h3>
+        <p>Every claim carries evidence and a confidence: very sure, fairly sure, or a guess.
+          You see the weak ones before you act on them.</p>
+        <ul>
+          <li>Correct the wording of any fact</li>
+          <li>Forget one, or forget all of it</li>
+        </ul>
+        <p class="cap">Memory · 40 facts per category</p>
+      </div>
+      <div class="card">
+        <h3>It asks before it assumes</h3>
+        <p>When it spots a pattern worth acting on, it raises it as a proposal with the dates
+          it first noticed and how often it has recurred.</p>
+        <ul>
+          <li>Offers to save work you keep repeating</li>
+          <li>Notes things it saw but didn't act on</li>
+        </ul>
+        <p class="cap">Suggestions · read before you approve</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAME ASSISTANT, WHEREVER ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h-lg">The same lil'&nbsp;help, wherever the work begins.</h2>
+      <p class="sub">Four surfaces, one conversation history. Open it where you already are.</p>
+    </div>
+    <div class="rows">
+      <div class="row" data-open="true">
+        <button class="row-btn" type="button">
+          <span class="row-k">Over your desktop</span>
+          <span class="row-v">A small frosted bar that floats above everything and remembers where you put it.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>Drag the frame to move it; double-click to snap it home. Screen edges keep it on
+            screen. The desktop behind stays clickable — only the bar itself takes input.</p>
+          <p>Drag it to the top edge to tuck it into the menu bar. The first time, it explains
+            where it went and how to bring it back.</p>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">Beside your work</span>
+          <span class="row-v">Pull any conversation into its own resizable card and keep it open while you type.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>Up to three cards at once. Full scrollback with selectable text, and it holds your
+            scroll position while you read older messages instead of yanking you to the bottom.</p>
+          <p>Closing a card doesn't archive the conversation.</p>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">At your cursor</span>
+          <span class="row-v">Pin it and the reply appears where you're already looking.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>Edge-aware placement with a bottom safe area, and it never swallows a click meant
+            for the app underneath. While pinned, replies stop duplicating in the bar.</p>
+          <div class="companion" data-companion>
+            <div class="companion-grid" aria-hidden="true"></div>
+            <p class="companion-hint" data-hint>Move your pointer across this box.</p>
+            <div class="runner" data-runner>
+              <span class="bubble">on it —</span>
+              <span data-legs data-st="idle" data-px="52" style="display:block;width:52px;height:52px"></span>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">All of it at once</span>
+          <span class="row-v">The Inbox: what's running, what's armed, what's connected, what's still open.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>Start a call transcript or a screen recording, switch model or voice, pause every
+            routine at once, and see the six workstreams you haven't finished.</p>
+          <p>Escape dismisses it. So does clicking the desktop behind.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACY ============ -->
+<section class="sec band-grey">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h-lg">What it learns about you belongs to you.</h2>
+    </div>
+    <div class="grid g4">
+      <div class="card">
+        <h3>Readable</h3>
+        <p>Every fact, rule and profile claim is on a page you can open and read in plain English.</p>
+      </div>
+      <div class="card">
+        <h3>Correctable</h3>
+        <p>Rewrite any fact in your own words. It keeps the prior wording so you can see what changed.</p>
+      </div>
+      <div class="card">
+        <h3>Erasable</h3>
+        <p>Forget one fact, or clear memory, entities and workstreams in a single confirmed action.</p>
+      </div>
+      <div class="card">
+        <h3>Your account</h3>
+        <p>Runs on your own model account, or your API key. Usage and cost are itemised per request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec">
+  <div class="wrap-narrow">
+    <div class="sec-head">
+      <h2 class="h-lg">The questions worth asking.</h2>
+    </div>
+    <div class="rows">
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">Is it listening all the time?</span>
+          <span class="row-v">No, unless you turn that on.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>By default it listens when you press the shortcut. Always-listening is a separate
+            setting, it requires enrolling your voice, and the bar's placeholder changes so you
+            can always tell which mode you're in.</p>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">Does it watch my screen?</span>
+          <span class="row-v">Only with permission, and you can revoke it.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>Screen access is a macOS permission you grant during setup and can withdraw in
+            System Settings at any time. "Watching" in the bar means it's ready for you, not
+            that a recording is running.</p>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">How many things can it do at once?</span>
+          <span class="row-v">Four conversations, plus routines in the background.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>Each gets a numbered chip in the bar with its own working indicator. Stop interrupts
+            one turn without deleting the conversation.</p>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">What does it cost to run?</span>
+          <span class="row-v">The app is free in beta; model usage is itemised.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>The Usage page shows cost per reporting window, request counts, input and output
+            tokens, cache reads and typical duration, down to individual requests.</p>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">Can it undo something it got wrong?</span>
+          <span class="row-v">It tries not to get that far without asking.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>Destructive actions stop for a confirmation that expires after four seconds, and
+            routines can require approval before each proposed step. Every request it has made
+            is listed in History with the rules and memories it used.</p>
+        </div></div>
+      </div>
+      <div class="row" data-open="false">
+        <button class="row-btn" type="button">
+          <span class="row-k">Is there a Windows version?</span>
+          <span class="row-v">Not yet.</span>
+          <svg class="row-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="row-panel"><div class="inner">
+          <p>The desktop interface is shared, but the call panel, screen recording and the
+            menu-bar surfaces are macOS-native today. Windows parity is in progress.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec band-dark on-dark">
+  <div class="wrap cta-in">
+    <span data-legs data-st="done" data-px="70" style="width:70px;height:70px"></span>
+    <h2 class="h-lg">The next task can know more than the last.</h2>
+    <p class="lede" style="text-align:center">Free while in beta. It'll worry about the work so you don't have to.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lg" href="/download">Download for macOS</a>
+      <a class="btn btn-lg btn-ghost" href="/what-it-does">Read what it does</a>
+    </div>
+  </div>
+</section>
