@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@700&display=swap">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-nav="{{NAV}}">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="/">
+      <span class="brand-legs" data-legs data-st="idle" data-size="sm" aria-hidden="true"></span>
+      <span class="wordmark">lil'&nbsp;help</span>
+    </a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/what-it-does" data-for="what-it-does">What it does</a>
+      <a href="/character" data-for="character">The character</a>
+      <a href="/download" data-for="download">Download</a>
+    </nav>
+    <a class="btn" href="/download">Download for macOS</a>
+  </div>
+</header>
+
+<main id="main">
+{{CONTENT}}
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <span class="brand-legs" data-legs data-st="idle" data-size="sm" aria-hidden="true"></span>
+      <span class="wordmark">lil'&nbsp;help</span>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/what-it-does">What it does</a>
+      <a href="/character">The character</a>
+      <a href="/download">Download</a>
+    </nav>
+    <p class="foot-note">© {{YEAR}} · macOS 15 or later · Windows parity in progress</p>
+  </div>
+</footer>
+
+<script src="/js/mascot.js"></script>
+<script src="/js/site.js"></script>
+</body>
+</html>
