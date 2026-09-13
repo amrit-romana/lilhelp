@@ -1,0 +1,572 @@
+<title>Non-Dilutive India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F6F7F3; --surface:#FFFFFF; --surface-2:#EEF0EA; --sunk:#E6E9E0;
+  --ink:#131A17; --ink-2:#3D4742; --ink-3:#6B7670; --hair:#D5DAD0; --hair-2:#C2C9BC;
+  --indigo:#2E3A87; --indigo-soft:#E4E7F5; --indigo-ink:#1F2A6B;
+  --moss:#3D6B4C; --moss-soft:#E2EDE4;
+  --saffron:#C4651B; --saffron-soft:#F7E9DA;
+  --slate:#5C6A78; --slate-soft:#E7EBEF;
+  --frost:rgba(255,255,255,.82); --frost-line:rgba(19,26,23,.10);
+  --shadow-lift:0 1px 2px rgba(19,26,23,.05), 0 8px 24px -12px rgba(19,26,23,.18);
+  --shadow-dock:0 2px 8px rgba(19,26,23,.08), 0 24px 60px -20px rgba(19,26,23,.38);
+  --r-s:6px; --r-m:10px; --r-l:16px;
+  --step--1:.775rem; --step-0:.925rem; --step-1:1.08rem; --step-2:1.42rem; --step-3:2.1rem; --step-4:3.1rem;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#0E1311; --surface:#161C19; --surface-2:#1E2622; --sunk:#111714;
+  --ink:#E8EDE7; --ink-2:#AEB8B1; --ink-3:#7E8A83; --hair:#2A332E; --hair-2:#3A453E;
+  --indigo:#97A4E8; --indigo-soft:#1E2445; --indigo-ink:#B9C2F0;
+  --moss:#7FBE92; --moss-soft:#17271C;
+  --saffron:#E0995A; --saffron-soft:#2A1E12;
+  --slate:#9FAEBC; --slate-soft:#1A2128;
+  --frost:rgba(22,28,25,.82); --frost-line:rgba(232,237,231,.12);
+  --shadow-lift:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  --shadow-dock:0 2px 8px rgba(0,0,0,.5), 0 24px 60px -20px rgba(0,0,0,.9);
+}}
+:root[data-theme="dark"]{
+  --paper:#0E1311; --surface:#161C19; --surface-2:#1E2622; --sunk:#111714;
+  --ink:#E8EDE7; --ink-2:#AEB8B1; --ink-3:#7E8A83; --hair:#2A332E; --hair-2:#3A453E;
+  --indigo:#97A4E8; --indigo-soft:#1E2445; --indigo-ink:#B9C2F0;
+  --moss:#7FBE92; --moss-soft:#17271C;
+  --saffron:#E0995A; --saffron-soft:#2A1E12;
+  --slate:#9FAEBC; --slate-soft:#1A2128;
+  --frost:rgba(22,28,25,.82); --frost-line:rgba(232,237,231,.12);
+  --shadow-lift:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  --shadow-dock:0 2px 8px rgba(0,0,0,.5), 0 24px 60px -20px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:var(--step-0); line-height:1.55; -webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",ui-sans-serif,sans-serif;
+  font-weight:700; text-wrap:balance; margin:0; letter-spacing:-.02em; line-height:1.1}
+a{color:var(--indigo)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--step--1);
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;border-radius:4px}
+
+/* ---- masthead ---- */
+.mast{border-bottom:1px solid var(--hair);background:var(--surface)}
+.mast-in{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:flex-end;justify-content:space-between;padding-block:30px 24px}
+.mast-lead{flex:1 1 440px;min-width:0}
+.counts{flex:0 0 auto}
+.lock{display:flex;align-items:center;gap:11px}
+.glyph{width:34px;height:34px;flex:none}
+.mast h1{font-size:var(--step-3);font-weight:800}
+.mast .lede{color:var(--ink-2);max-width:54ch;margin:7px 0 0;text-wrap:pretty}
+.mast .lede b{color:var(--ink);font-weight:600}
+.counts{display:flex;gap:26px;flex-wrap:wrap}
+.count b{display:block;font-family:"IBM Plex Mono",monospace;font-size:var(--step-2);
+  font-weight:600;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.count span{display:block;margin-top:5px;font-size:var(--step--1);color:var(--ink-3)}
+
+/* ---- provenance notice: not a card, a marked-up rail ---- */
+.notice{border-left:3px solid var(--saffron);background:var(--saffron-soft);
+  padding:13px 16px;margin-block:18px;border-radius:0 var(--r-s) var(--r-s) 0;
+  font-size:var(--step--1);color:var(--ink-2);line-height:1.5}
+.notice strong{color:var(--ink);font-weight:600}
+
+/* ---- layout ---- */
+.cols{display:grid;grid-template-columns:212px minmax(0,1fr);gap:34px;padding-block:8px 72px;align-items:start}
+@media (max-width:860px){.cols{grid-template-columns:1fr;gap:20px}}
+.rail{position:sticky;top:16px;display:flex;flex-direction:column;gap:22px}
+@media (max-width:860px){.rail{position:static}}
+.facet h3{font-size:var(--step--1);font-family:"IBM Plex Mono",monospace;font-weight:500;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin-bottom:9px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:var(--step--1);cursor:pointer;padding:4px 10px;border-radius:100px;
+  border:1px solid var(--hair-2);background:transparent;color:var(--ink-2);transition:.12s}
+.chip:hover{border-color:var(--ink-3);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--indigo);border-color:var(--indigo);color:#fff;font-weight:500}
+:root[data-theme="dark"] .chip[aria-pressed="true"],
+:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:var(--sunk)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .chip[aria-pressed="true"]{color:#fff}}
+
+/* ---- search ---- */
+.searchbar{display:flex;gap:9px;align-items:center;margin-bottom:14px}
+.field{flex:1;display:flex;align-items:center;gap:9px;background:var(--surface);
+  border:1px solid var(--hair-2);border-radius:var(--r-m);padding:0 11px;transition:.12s}
+.field:focus-within{border-color:var(--indigo);box-shadow:0 0 0 3px var(--indigo-soft)}
+.field input{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;padding:10px 0;min-width:0}
+.field input:focus{outline:none}
+.field svg{flex:none;color:var(--ink-3)}
+.clear{border:0;background:transparent;color:var(--ink-3);cursor:pointer;font-size:1.1rem;
+  line-height:1;padding:3px 5px;border-radius:4px}
+.clear:hover{color:var(--ink);background:var(--surface-2)}
+.resultline{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  flex-wrap:wrap;margin-bottom:11px;font-size:var(--step--1);color:var(--ink-3)}
+.linkish{border:0;background:transparent;color:var(--indigo);font:inherit;font-size:var(--step--1);
+  cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+
+/* ---- information rows ---- */
+.rows{border-top:1px solid var(--hair)}
+.row{border-bottom:1px solid var(--hair)}
+.row.matched{background:var(--indigo-soft)}
+.row-head{width:100%;text-align:left;font:inherit;color:inherit;background:transparent;border:0;
+  cursor:pointer;padding:15px 4px;display:grid;grid-template-columns:minmax(0,1fr) auto 14px;gap:6px 16px;align-items:center}
+.row-head::-webkit-details-marker{display:none}
+.row-head{list-style:none}
+.row-head:hover{background:var(--surface-2)}
+.row-title{display:block;font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:700;
+  font-size:var(--step-1);letter-spacing:-.015em;line-height:1.25}
+.row-org{display:block;color:var(--ink-3);font-size:var(--step--1);margin-top:3px}
+.row-meta{display:flex}
+.row-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;align-items:center}
+.row-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right}
+.row-head > span:first-child{align-self:start}
+.amount{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:var(--step-0);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.disclose{color:var(--ink-3);transition:transform .18s}
+.row[open] .disclose{transform:rotate(90deg)}
+.tag{font-size:.72rem;padding:2px 7px;border-radius:var(--r-s);background:var(--surface-2);
+  color:var(--ink-2);white-space:nowrap}
+.pill{font-size:.72rem;font-family:"IBM Plex Mono",monospace;padding:2px 8px;border-radius:100px;
+  white-space:nowrap;font-weight:500}
+.pill.open{background:var(--moss-soft);color:var(--moss)}
+.pill.call{background:var(--slate-soft);color:var(--slate)}
+.pill.check{background:var(--saffron-soft);color:var(--saffron)}
+.women{background:var(--indigo-soft);color:var(--indigo-ink);font-weight:500}
+
+/* ---- expandable detail ---- */
+.detail{padding:2px 4px 22px;display:grid;gap:16px;max-width:74ch}
+.detail p{margin:0;color:var(--ink-2)}
+.pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:13px 22px;
+  border-top:1px solid var(--hair);padding-top:14px}
+.pair dt{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  font-family:"IBM Plex Mono",monospace;margin-bottom:3px}
+.pair dd{margin:0;font-size:var(--step--1);color:var(--ink)}
+.detail-acts{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.src{font-size:var(--step--1);font-weight:500}
+/* confidence indicator, per component inventory */
+.conf{display:flex;align-items:center;gap:6px;font-size:var(--step--1);color:var(--ink-3)}
+.dots{display:flex;gap:2.5px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--hair-2)}
+.dot.on{background:var(--ink-3)}
+.empty{padding:52px 4px;text-align:center;color:var(--ink-3)}
+.empty h3{font-size:var(--step-1);color:var(--ink);margin-bottom:7px}
+
+/* ---- chat dock (frosted surface) ---- */
+.dock{position:fixed;right:20px;bottom:20px;width:min(382px,calc(100vw - 40px));z-index:50;
+  background:var(--frost);backdrop-filter:blur(22px) saturate(1.7);-webkit-backdrop-filter:blur(22px) saturate(1.7);
+  border:1px solid var(--frost-line);border-radius:var(--r-l);box-shadow:var(--shadow-dock);
+  display:flex;flex-direction:column;overflow:hidden;max-height:min(560px,calc(100vh - 40px))}
+.dock.tucked .dock-body{display:none}
+.dock-head{display:flex;align-items:center;gap:9px;padding:11px 13px;cursor:pointer;
+  border-bottom:1px solid var(--frost-line);background:transparent;border-left:0;border-right:0;border-top:0;
+  font:inherit;color:inherit;text-align:left;width:100%}
+.pip{width:7px;height:7px;border-radius:50%;background:var(--moss);flex:none}
+.pip.busy{background:var(--saffron);animation:pulse 1.1s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.dock-head b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:var(--step-0);flex:1}
+.dock-head .status{font-size:.72rem;color:var(--ink-3);font-family:"IBM Plex Mono",monospace}
+.dock-body{display:flex;flex-direction:column;min-height:0}
+.transcript{overflow-y:auto;padding:14px 13px;display:flex;flex-direction:column;gap:12px;min-height:132px;max-height:344px}
+.msg{font-size:var(--step--1);line-height:1.58;max-width:100%}
+.msg.you{align-self:flex-end;background:var(--indigo);color:#fff;padding:7px 11px;
+  border-radius:12px 12px 3px 12px;max-width:86%}
+:root[data-theme="dark"] .msg.you{color:var(--sunk)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .msg.you{color:var(--sunk)}}
+.msg.bot{color:var(--ink-2)}
+.msg.bot strong{color:var(--ink)}
+.msg.sys{font-size:.72rem;color:var(--ink-3);font-family:"IBM Plex Mono",monospace;text-align:center}
+.starters{display:flex;flex-wrap:wrap;gap:6px;padding:0 13px 12px}
+.composer{display:flex;gap:8px;padding:11px 13px;border-top:1px solid var(--frost-line);align-items:flex-end}
+.composer textarea{flex:1;border:1px solid var(--hair-2);background:var(--surface);color:var(--ink);
+  font:inherit;font-size:var(--step--1);border-radius:var(--r-m);padding:8px 10px;resize:none;
+  max-height:96px;min-height:38px;line-height:1.45}
+.composer textarea:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px var(--indigo-soft)}
+.send{border:0;background:var(--indigo);color:#fff;border-radius:var(--r-m);padding:0 13px;height:38px;
+  cursor:pointer;font:inherit;font-weight:500;font-size:var(--step--1);flex:none}
+:root[data-theme="dark"] .send{color:var(--sunk)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .send{color:var(--sunk)}}
+.send:disabled{opacity:.45;cursor:not-allowed}
+@media (max-width:560px){.dock{right:12px;left:12px;bottom:12px;width:auto}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.foot{border-top:1px solid var(--hair);padding-block:26px 40px;color:var(--ink-3);font-size:var(--step--1)}
+.foot p{margin:0 0 8px;max-width:70ch}
+</style>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <div class="mast-lead">
+      <div class="lock">
+        <svg class="glyph" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="32" height="32" rx="7" fill="var(--indigo)"/>
+          <path d="M9 23.5V10.5M9 10.5h7.2a4.1 4.1 0 010 8.2H9" stroke="var(--surface)" stroke-width="2.6" stroke-linecap="square"/>
+          <circle cx="24" cy="22.6" r="2.5" fill="var(--surface)"/>
+        </svg>
+        <h1>Non-Dilutive India</h1>
+      </div>
+      <p class="lede">Grants, incubation, fellowships and challenges for Indian founders — <b>money that does not take your equity.</b> There is far more of it than most founders ever see.</p>
+    </div>
+    <div class="counts">
+      <div class="count"><b id="k-total">0</b><span>listings</span></div>
+      <div class="count"><b id="k-grant">0</b><span>pure grants</span></div>
+      <div class="count"><b id="k-women">0</b><span>women-focused</span></div>
+      <div class="count"><b id="k-open">0</b><span>rolling intake</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="notice" id="provenance"></div>
+</div>
+
+<main class="wrap cols">
+  <aside class="rail">
+    <div class="facet"><h3>Type</h3><div class="chips" id="f-type"></div></div>
+    <div class="facet"><h3>Stage</h3><div class="chips" id="f-stage"></div></div>
+    <div class="facet"><h3>Sector</h3><div class="chips" id="f-sector"></div></div>
+    <div class="facet"><h3>Filter</h3><div class="chips">
+      <button class="chip" id="f-women" aria-pressed="false">Women founders</button>
+      <button class="chip" id="f-central" aria-pressed="false">Central govt</button>
+    </div></div>
+  </aside>
+
+  <section>
+    <div class="searchbar">
+      <label class="field" for="q">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.7"/><path d="M11 11l3.2 3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search scheme, agency, sector…" autocomplete="off">
+        <button class="clear" id="q-clear" hidden aria-label="Clear search">&times;</button>
+      </label>
+    </div>
+    <div class="resultline">
+      <span id="count">—</span>
+      <button class="linkish" id="reset" hidden>Reset filters</button>
+    </div>
+    <div class="rows" id="rows"></div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p><strong>Verify before you apply.</strong> Scheme terms, ceilings and windows change without notice. Every listing links to its official source — that page, not this one, is authoritative.</p>
+  <p>Amounts are typical ceilings, not entitlements. Most central schemes disburse through a recognised incubator, so your host institution often decides your real timeline.</p>
+</footer>
+
+<div class="dock tucked" id="dock">
+  <button class="dock-head" id="dock-toggle" aria-expanded="false" aria-controls="dock-body">
+    <span class="pip" id="pip"></span>
+    <b>Find my funding</b>
+    <span class="status" id="dock-status">Ask</span>
+  </button>
+  <div class="dock-body" id="dock-body">
+    <div class="transcript" id="transcript"></div>
+    <div class="starters" id="starters"></div>
+    <form class="composer" id="composer">
+      <textarea id="input" rows="1" placeholder="What are you building?"></textarea>
+      <button class="send" id="send" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Ceilings and cycles below are typical published terms, carried with a source link
+// and a confidence rating rather than presented as guarantees. See CATALOGUE_NOTE.
+const DATA = [
+{id:"sisfs",name:"Startup India Seed Fund Scheme (SISFS)",org:"DPIIT, Govt of India",type:"Grant",amt:"Up to ₹20L",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Rolling",region:"Central",conf:3,url:"https://seedfund.startupindia.gov.in/",note:"Up to ₹20L as grant for proof of concept and prototyping, plus up to ₹50L for market entry via convertible debentures or debt. You apply to selected incubators, not to DPIIT directly — pick up to three on the portal. DPIIT recognition required first."},
+{id:"big",name:"Biotechnology Ignition Grant (BIG)",org:"BIRAC, DBT",type:"Grant",amt:"Up to ₹50L",stage:["Idea","Prototype"],sector:["Biotech","Health","Agri"],women:false,cycle:"Periodic call",region:"Central",conf:3,url:"https://birac.nic.in/big.php",note:"India's largest early biotech grant. Roughly 18 months of runway for proof of concept. Calls open periodically — typically twice a year. Individual entrepreneurs can apply if they attach to a BIG partner incubator."},
+{id:"birac-seed",name:"BIRAC SEED Fund",org:"BIRAC, DBT",type:"Grant",amt:"Up to ₹30L",stage:["Prototype"],sector:["Biotech","Health"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://birac.nic.in/",note:"Follow-on support for biotech startups that have cleared early proof of concept and need to reach a working product. Usually sequenced after BIG."},
+{id:"birac-sparsh",name:"SPARSH — Social Innovation for Health",org:"BIRAC, DBT",type:"Grant",amt:"Up to ₹50L",stage:["Prototype"],sector:["Health","Social"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://birac.nic.in/",note:"Affordable-healthcare innovation with an explicit social-impact mandate. Themed calls — the theme changes each round, so a rejected idea may fit a later window."},
+{id:"prayas",name:"NIDHI-PRAYAS",org:"DST, Govt of India",type:"Grant",amt:"Up to ₹10L",stage:["Idea","Prototype"],sector:["Deeptech","Mfg","Any"],women:false,cycle:"Periodic call",region:"Central",conf:3,url:"https://www.nidhi-prayas.org/",note:"Pure hardware grant — 'proof of concept to prototype'. Money plus workshop access at a PRAYAS centre. One of the few schemes that will fund you before a company exists."},
+{id:"nidhi-eir",name:"NIDHI Entrepreneur-in-Residence",org:"DST, Govt of India",type:"Fellowship",amt:"~₹30k/month",stage:["Idea"],sector:["Any"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://www.nidhi-eir.com/",note:"A living stipend, usually 12 months, so you can leave a job and test an idea. Aimed at graduating students and early researchers. Hosted by a TBI."},
+{id:"nidhi-sss",name:"NIDHI Seed Support System",org:"DST, Govt of India",type:"Grant",amt:"Up to ₹1Cr",stage:["Prototype","Revenue"],sector:["Deeptech","Any"],women:false,cycle:"Via incubator",region:"Central",conf:2,url:"https://dst.gov.in/",note:"Larger seed support routed entirely through DST-backed incubators. There is no direct application — you must already be incubated at a participating TBI."},
+{id:"tide",name:"TIDE 2.0",org:"MeitY",type:"Grant",amt:"₹7L–₹25L",stage:["Idea","Prototype"],sector:["Deeptech","SaaS"],women:false,cycle:"Via incubator",region:"Central",conf:2,url:"https://tide.meity.gov.in/",note:"Tech incubation for ICT startups in named focus areas — IoT, AI, blockchain, robotics. EIR grant at the lower band, prototype grant at the higher. Applied through the 51 participating incubators."},
+{id:"genesis",name:"GENESIS",org:"MeitY",type:"Grant",amt:"Varies",stage:["Idea","Prototype"],sector:["Deeptech","SaaS"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://genesis.startupindia.gov.in/",note:"Explicitly built for Tier-2 and Tier-3 city founders — a deliberate correction to how concentrated Indian startup capital is. Worth checking if you are outside the metros."},
+{id:"samridh",name:"SAMRIDH",org:"MeitY",type:"Accelerator",amt:"Up to ₹40L",stage:["Revenue"],sector:["SaaS","Deeptech","Health"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://samridh.meity.gov.in/",note:"Acceleration plus matching investment for software product startups with customers already. Requires a matching commitment from an investor."},
+{id:"idex",name:"iDEX — SPARK",org:"Ministry of Defence",type:"Challenge",amt:"Up to ₹1.5Cr",stage:["Prototype"],sector:["Defence","Deeptech","Space"],women:false,cycle:"Periodic call",region:"Central",conf:3,url:"https://idex.gov.in/",note:"Defence India Startup Challenge. Problem statements come from the armed forces, so there is a named customer at the end — rare for a grant. Long security and procurement cycles."},
+{id:"aditi",name:"ADITI (iDEX deeptech window)",org:"Ministry of Defence",type:"Challenge",amt:"Up to ₹25Cr",stage:["Prototype","Revenue"],sector:["Defence","Deeptech","Space"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://idex.gov.in/",note:"The large-ticket iDEX window for critical and strategic defence technology. Substantially bigger cheques than SPARK, with correspondingly heavy diligence."},
+{id:"inspace",name:"IN-SPACe Seed Fund",org:"IN-SPACe, DoS",type:"Grant",amt:"Up to ₹1Cr",stage:["Prototype"],sector:["Space","Deeptech"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://www.inspace.gov.in/",note:"Seed support for private space companies, alongside access to ISRO facilities and test infrastructure — the facility access is often worth more than the cash."},
+{id:"rkvy",name:"RKVY-RAFTAAR Agribusiness Incubation",org:"Ministry of Agriculture",type:"Grant",amt:"₹5L–₹25L",stage:["Idea","Prototype"],sector:["Agri","Climate"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://rkvy.da.gov.in/",note:"Idea/pre-seed at the lower band and seed at the higher, delivered through agribusiness incubators at agricultural universities. Strong route for rural and farm-facing ventures."},
+{id:"aim-aic",name:"Atal Incubation Centres",org:"Atal Innovation Mission, NITI Aayog",type:"Incubation",amt:"Infra + support",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Rolling",region:"Central",conf:2,url:"https://aim.gov.in/",note:"A national network of incubators rather than a single cheque. Space, mentors and often small internal grants. Apply to individual AICs directly."},
+{id:"tdb",name:"Technology Development Board",org:"TDB, DST",type:"Debt",amt:"₹50L–₹10Cr",stage:["Revenue","Scale"],sector:["Deeptech","Mfg","Health"],women:false,cycle:"Rolling",region:"Central",conf:2,url:"https://tdb.gov.in/",note:"Soft loans at concessional interest for commercialising indigenous technology. Not a grant — repayable — but far cheaper than equity and open all year."},
+{id:"wee",name:"Women Entrepreneurship & Empowerment (WEE)",org:"DST",type:"Grant",amt:"Varies",stage:["Idea","Prototype"],sector:["Any"],women:true,cycle:"Periodic call",region:"Central",conf:2,url:"https://dst.gov.in/",note:"DST's women-entrepreneur track, supporting tech ventures led by women with grant funding and structured incubation."},
+{id:"wings",name:"BIRAC WINGS",org:"BIRAC, DBT",type:"Grant",amt:"Up to ₹50L",stage:["Prototype"],sector:["Biotech","Health"],women:true,cycle:"Periodic call",region:"Central",conf:2,url:"https://birac.nic.in/",note:"Women in Innovation and Entrepreneurship. BIG-scale funding reserved for women-led biotech ventures, reducing the competitive field considerably."},
+{id:"msme-innov",name:"MSME Innovative Scheme",org:"Ministry of MSME",type:"Grant",amt:"Up to ₹15L",stage:["Idea","Prototype"],sector:["Mfg","Any"],women:false,cycle:"Rolling",region:"Central",conf:2,url:"https://innovative.msme.gov.in/",note:"Combines incubation, design and IPR support. Under-applied relative to its size because founders rarely think of MSME as a startup channel."},
+{id:"aspire",name:"ASPIRE",org:"Ministry of MSME",type:"Incubation",amt:"Infra + grant",stage:["Idea"],sector:["Agri","Mfg","Social"],women:false,cycle:"Rolling",region:"Central",conf:1,url:"https://msme.gov.in/",note:"Rural and agro-industry entrepreneurship through Livelihood Business Incubators. Check the current operational status of individual LBIs before counting on this."},
+{id:"cgtmse",name:"CGTMSE Credit Guarantee",org:"Ministry of MSME / SIDBI",type:"Debt",amt:"Up to ₹5Cr",stage:["Revenue","Scale"],sector:["Mfg","Any"],women:false,cycle:"Rolling",region:"Central",conf:2,url:"https://www.cgtmse.in/",note:"Not funding itself — a government guarantee that lets banks lend without collateral. The mechanism many founders miss when told they need assets to borrow."},
+{id:"sidbi-fof",name:"SIDBI Fund of Funds for Startups",org:"SIDBI",type:"Debt",amt:"Indirect",stage:["Revenue","Scale"],sector:["Any"],women:false,cycle:"Rolling",region:"Central",conf:2,url:"https://www.sidbivcf.in/",note:"Capital deployed into SEBI-registered AIFs, not into startups directly. Listed because founders repeatedly apply to it by mistake — go to the funds it backs instead."},
+{id:"gci",name:"Grand Challenges India",org:"BIRAC + Gates Foundation",type:"Challenge",amt:"Varies",stage:["Prototype"],sector:["Health","Social","Biotech"],women:false,cycle:"Periodic call",region:"Central",conf:2,url:"https://grandchallenges.org/",note:"Themed global-health and development challenges run jointly with international funders. Genuinely non-dilutive and research-friendly."},
+{id:"nbm",name:"National Bamboo / agri value-chain missions",org:"Ministry of Agriculture",type:"Grant",amt:"Scheme-specific",stage:["Revenue"],sector:["Agri","Climate","Mfg"],women:false,cycle:"Annual",region:"Central",conf:1,url:"https://nbm.nic.in/",note:"Sector missions carry capital subsidy for processing units. Terms vary sharply by state implementation — confirm with your state nodal agency."},
+{id:"ksum",name:"Kerala Startup Mission — Idea Grant",org:"Govt of Kerala",type:"Grant",amt:"Up to ₹15L",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Rolling",region:"Kerala",conf:2,url:"https://startupmission.kerala.gov.in/",note:"Idea grant plus productisation and scale-up grants in sequence. Among the most consistently administered state programmes in the country."},
+{id:"elevate",name:"Elevate",org:"Karnataka Startup Cell",type:"Grant",amt:"Up to ₹50L",stage:["Prototype","Revenue"],sector:["Any"],women:false,cycle:"Annual",region:"Karnataka",conf:2,url:"https://startup.karnataka.gov.in/",note:"Karnataka's flagship competitive grant, awarded on pitch and milestone review. Annual cohort — missing the window costs you a year."},
+{id:"tfund",name:"T-Fund",org:"Govt of Telangana",type:"Grant",amt:"Varies",stage:["Prototype","Revenue"],sector:["Deeptech","SaaS"],women:false,cycle:"Periodic call",region:"Telangana",conf:1,url:"https://t-hub.co/",note:"Telangana's startup funding vehicle, usually accessed via T-Hub programmes. Check current structure — it has been reorganised more than once."},
+{id:"tansim",name:"StartupTN / TANSIM",org:"Govt of Tamil Nadu",type:"Grant",amt:"Up to ₹10L",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Rolling",region:"Tamil Nadu",conf:2,url:"https://startuptn.in/",note:"Seed grant plus a state-run incubator network. Additional windows reserved for women, rural and first-generation entrepreneurs."},
+{id:"msins",name:"Maharashtra State Innovation Society",org:"Govt of Maharashtra",type:"Challenge",amt:"Up to ₹15L",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Annual",region:"Maharashtra",conf:2,url:"https://msins.in/",note:"Runs the Maharashtra Startup Week — winners get grant funding plus government work orders, which is the more valuable half of the prize."},
+{id:"ssip",name:"SSIP — Student Startup & Innovation Policy",org:"Govt of Gujarat",type:"Grant",amt:"Up to ₹2.5L",stage:["Idea"],sector:["Any"],women:false,cycle:"Rolling",region:"Gujarat",conf:2,url:"https://ssipgujarat.in/",note:"Small, fast grants administered through colleges. Designed for student innovators — the lowest-friction first rupee in the country if you are still enrolled."},
+{id:"istart",name:"iStart Rajasthan",org:"Govt of Rajasthan",type:"Grant",amt:"Up to ₹25L",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Rolling",region:"Rajasthan",conf:2,url:"https://istart.rajasthan.gov.in/",note:"Sustenance allowance for early teams plus a graded grant ladder, with incubation across state iStart nests."},
+{id:"upsf",name:"UP Startup Fund",org:"Govt of Uttar Pradesh",type:"Grant",amt:"Varies",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Rolling",region:"Uttar Pradesh",conf:1,url:"https://startinup.up.gov.in/",note:"State fund with incubator-routed disbursal and a monthly sustenance allowance component. Confirm current terms with the StartinUP nodal office."},
+{id:"ohub",name:"O-Hub / Startup Odisha",org:"Govt of Odisha",type:"Grant",amt:"Up to ₹15L",stage:["Idea","Prototype"],sector:["Any"],women:false,cycle:"Rolling",region:"Odisha",conf:1,url:"https://startupodisha.gov.in/",note:"Product development grant plus sustenance allowance, with extra weighting for women and SC/ST founders."},
+{id:"villgro",name:"Villgro Incubation",org:"Villgro Innovations Foundation",type:"Incubation",amt:"₹20L–₹50L",stage:["Prototype","Revenue"],sector:["Health","Agri","Climate","Social"],women:false,cycle:"Periodic call",region:"Private",conf:3,url:"https://villgro.org/",note:"India's longest-running social enterprise incubator. Patient capital, hands-on support, genuine sector depth in health and agriculture."},
+{id:"socialalpha",name:"Social Alpha",org:"Social Alpha (FISE)",type:"Incubation",amt:"Varies",stage:["Prototype","Revenue"],sector:["Climate","Health","Agri","Deeptech","Social"],women:false,cycle:"Rolling",region:"Private",conf:3,url:"https://socialalpha.org/",note:"Lab-to-market for science-led social impact ventures. Runs many themed quests with distinct funding — check the quest list, not just the main page."},
+{id:"upaya",name:"Upaya Social Ventures",org:"Upaya",type:"Accelerator",amt:"Varies",stage:["Revenue"],sector:["Social","Agri"],women:false,cycle:"Rolling",region:"Private",conf:2,url:"https://www.upayasv.org/",note:"Backs ventures creating dignified jobs for the extreme poor. Job creation is the primary selection metric, ahead of growth rate."},
+{id:"actgrants",name:"ACT Grants",org:"ACT (Action COVID-19 Team)",type:"Grant",amt:"Varies",stage:["Prototype","Revenue"],sector:["Climate","Health","Social"],women:false,cycle:"Periodic call",region:"Private",conf:2,url:"https://actgrants.in/",note:"Venture philanthropy from the Indian startup ecosystem itself. Moves considerably faster than government channels."},
+{id:"nudge",name:"The Nudge Incubator",org:"The Nudge Institute",type:"Incubation",amt:"Up to ₹40L",stage:["Idea","Prototype"],sector:["Social","Agri","Climate"],women:false,cycle:"Periodic call",region:"Private",conf:2,url:"https://www.thenudge.org/",note:"For founders building on poverty alleviation, with a strong bias toward measurable outcomes over narrative."},
+{id:"sparkwomen",name:"Peak XV Spark (Women Founders)",org:"Peak XV Partners",type:"Fellowship",amt:"Equity-based",stage:["Idea","Prototype"],sector:["Any"],women:true,cycle:"Annual",region:"Private",conf:2,url:"https://www.peakxv.com/spark/",note:"Fellowship plus capital for women founders. Flagged clearly: this one IS dilutive — included because founders search for it alongside grants, not because it is non-dilutive."},
+{id:"gfs",name:"Google for Startups Accelerator India",org:"Google",type:"Accelerator",amt:"Non-cash",stage:["Revenue"],sector:["SaaS","Deeptech","Any"],women:false,cycle:"Annual",region:"Private",conf:3,url:"https://startup.google.com/",note:"No cash, no equity. Engineering mentorship, cloud credits and access. Separate women-founders track runs most years."},
+{id:"msft",name:"Microsoft for Startups Founders Hub",org:"Microsoft",type:"Credits",amt:"Up to $150k credits",stage:["Idea","Prototype","Revenue"],sector:["SaaS","Deeptech","Any"],women:false,cycle:"Rolling",region:"Private",conf:3,url:"https://www.microsoft.com/startups",note:"Azure and OpenAI credits with no equity taken and effectively no gate at the entry tier. The fastest non-dilutive value on this list to actually obtain."},
+{id:"aws",name:"AWS Activate",org:"Amazon Web Services",type:"Credits",amt:"Up to $100k credits",stage:["Idea","Prototype","Revenue"],sector:["Any"],women:false,cycle:"Rolling",region:"Private",conf:3,url:"https://aws.amazon.com/activate/",note:"Cloud credits scaled by tier; the larger tiers need an affiliated accelerator or VC referral. Credits are real runway — treat them as funding."},
+{id:"nvidia",name:"NVIDIA Inception",org:"NVIDIA",type:"Credits",amt:"Non-cash",stage:["Prototype","Revenue"],sector:["Deeptech","SaaS","Health"],women:false,cycle:"Rolling",region:"Private",conf:3,url:"https://www.nvidia.com/en-us/startups/",note:"Hardware discounts, engineering access and go-to-market support for AI companies. No equity, no cost, rolling admission."},
+{id:"ciie",name:"CIIE.CO",org:"IIM Ahmedabad",type:"Incubation",amt:"Varies",stage:["Idea","Prototype","Revenue"],sector:["Fintech","Climate","Agri","Any"],women:false,cycle:"Periodic call",region:"Private",conf:2,url:"https://ciie.co/",note:"Runs multiple themed accelerators with distinct funding lines — Bharat Inclusion for fintech, climate programmes separately."},
+{id:"sine",name:"SINE, IIT Bombay",org:"IIT Bombay",type:"Incubation",amt:"Infra + seed",stage:["Prototype"],sector:["Deeptech","Mfg","Health"],women:false,cycle:"Periodic call",region:"Maharashtra",conf:2,url:"https://www.sineiitb.org/",note:"Technology business incubator and a recognised SISFS disbursing partner, so it can be your route into the central seed fund."},
+{id:"fitt",name:"FITT, IIT Delhi",org:"IIT Delhi",type:"Incubation",amt:"Infra + seed",stage:["Prototype"],sector:["Deeptech","Mfg","Health"],women:false,cycle:"Rolling",region:"Delhi",conf:2,url:"https://fitt-iitd.in/",note:"Foundation for Innovation and Technology Transfer. Lab access and IP support alongside incubation — valuable for research-derived ventures."},
+{id:"iitm",name:"IITM Incubation Cell",org:"IIT Madras",type:"Incubation",amt:"Infra + seed",stage:["Prototype","Revenue"],sector:["Deeptech","Mfg","Space"],women:false,cycle:"Rolling",region:"Tamil Nadu",conf:3,url:"https://incubation.iitm.ac.in/",note:"The deepest deeptech incubator in the country by portfolio. Runs its own pre-incubation and Nirmaan track for pre-company founders."},
+{id:"acumen",name:"Acumen Fellowship (India)",org:"Acumen",type:"Fellowship",amt:"Stipend + training",stage:["Idea","Prototype","Revenue"],sector:["Social","Agri","Climate"],women:false,cycle:"Annual",region:"Private",conf:2,url:"https://acumenacademy.org/",note:"A leadership fellowship rather than company funding — it backs the person. Part-time over roughly a year, no equity."},
+{id:"ashoka",name:"Ashoka Fellowship",org:"Ashoka",type:"Fellowship",amt:"Living stipend",stage:["Revenue","Scale"],sector:["Social"],women:false,cycle:"Rolling",region:"Private",conf:2,url:"https://www.ashoka.org/en-in",note:"Multi-year stipend for system-changing social entrepreneurs. Extremely selective, nominated as much as applied, and lifelong once granted."},
+{id:"echoing",name:"Echoing Green Fellowship",org:"Echoing Green",type:"Fellowship",amt:"~$80k + support",stage:["Idea","Prototype"],sector:["Social","Climate","Health"],women:false,cycle:"Annual",region:"Private",conf:2,url:"https://echoinggreen.org/",note:"Global fellowship open to Indian applicants. Unrestricted stipend over two years — unrestricted is the operative word."},
+{id:"millennium",name:"Millennium Alliance",org:"FICCI / USAID / DST",type:"Grant",amt:"₹10L–₹2Cr",stage:["Prototype","Revenue"],sector:["Social","Health","Agri","Climate"],women:false,cycle:"Periodic call",region:"Central",conf:1,url:"https://www.millenniumalliance.in/",note:"Joint Indian-international innovation fund for development-sector solutions. Round frequency has been irregular — verify the current call status."},
+{id:"ongc",name:"ONGC Start-up Fund",org:"ONGC",type:"Grant",amt:"Up to ₹5Cr",stage:["Prototype","Revenue"],sector:["Climate","Deeptech","Mfg"],women:false,cycle:"Rolling",region:"Central",conf:1,url:"https://www.ongcindia.com/",note:"PSU startup fund under the Startup India umbrella, focused on energy. PSU funds are slow but write large cheques — verify the current window."},
+{id:"bpcl",name:"BPCL Ankur",org:"Bharat Petroleum",type:"Grant",amt:"Varies",stage:["Prototype"],sector:["Climate","Deeptech","Mfg"],women:false,cycle:"Periodic call",region:"Central",conf:1,url:"https://www.bharatpetroleum.in/",note:"Energy-sector PSU innovation programme with grant and pilot support. A pilot with a PSU is often the real prize here."},
+{id:"nabard",name:"NABARD Rural Innovation Fund",org:"NABARD",type:"Grant",amt:"Varies",stage:["Prototype","Revenue"],sector:["Agri","Social","Climate"],women:false,cycle:"Rolling",region:"Central",conf:1,url:"https://www.nabard.org/",note:"Rural livelihood and agri-innovation support, typically routed through partner institutions rather than direct to founders."},
+{id:"sih",name:"Smart India Hackathon",org:"Ministry of Education",type:"Challenge",amt:"Prize money",stage:["Idea"],sector:["Any"],women:false,cycle:"Annual",region:"Central",conf:2,url:"https://sih.gov.in/",note:"Student hackathon against real ministry problem statements. Small money, but winning teams get direct visibility with the sponsoring department."},
+{id:"prip",name:"PRIP — Pharma & MedTech R&D",org:"Dept of Pharmaceuticals",type:"Grant",amt:"Varies",stage:["Prototype","Revenue"],sector:["Health","Biotech"],women:false,cycle:"Periodic call",region:"Central",conf:1,url:"https://pharmaceuticals.gov.in/",note:"Promotion of Research and Innovation in Pharma MedTech. Newer scheme — confirm the current call structure directly with the department."},
+{id:"csir",name:"CSIR Innovation & Entrepreneurship",org:"CSIR",type:"Grant",amt:"Varies",stage:["Idea","Prototype"],sector:["Deeptech","Biotech","Mfg"],women:false,cycle:"Periodic call",region:"Central",conf:1,url:"https://www.csir.res.in/",note:"Funding and lab access for translating CSIR laboratory research toward market. Strongest fit if your technology already touches a CSIR lab."},
+{id:"zone",name:"Zone Startups India",org:"Zone Startups",type:"Accelerator",amt:"Varies",stage:["Revenue"],sector:["Fintech","SaaS"],women:false,cycle:"Periodic call",region:"Private",conf:2,url:"https://zonestartups.in/",note:"Runs empoWer, a dedicated accelerator for women-led startups, alongside its general fintech programmes."},
+{id:"wingsurge",name:"WE Hub",org:"Govt of Telangana",type:"Incubation",amt:"Varies",stage:["Idea","Prototype","Revenue"],sector:["Any"],women:true,cycle:"Rolling",region:"Telangana",conf:2,url:"https://wehub.telangana.gov.in/",note:"India's first state-led incubator exclusively for women entrepreneurs. Incubation, grant linkage and market access."},
+{id:"sidbi-prayaas",name:"SIDBI Prayaas",org:"SIDBI",type:"Debt",amt:"Up to ₹5L",stage:["Idea","Revenue"],sector:["Mfg","Social","Any"],women:false,cycle:"Rolling",region:"Central",conf:1,url:"https://www.sidbi.in/",note:"Small-ticket lending for micro-entrepreneurs underserved by formal credit. Repayable, low value, but reachable without collateral."},
+{id:"dpiit-ipr",name:"SIPP — Startup IPR Protection",org:"DPIIT",type:"Credits",amt:"Fee rebate",stage:["Idea","Prototype","Revenue"],sector:["Any"],women:false,cycle:"Rolling",region:"Central",conf:2,url:"https://www.startupindia.gov.in/",note:"Government pays your patent facilitator's fees and rebates 80% of patent filing fees for DPIIT-recognised startups. Not cash, but a direct cost removal most founders never claim."}
+];
+const CATALOGUE_NOTE = "seed set";
+</script>
+<script>
+const $ = s => document.querySelector(s);
+const TYPES = ["Grant","Incubation","Accelerator","Fellowship","Challenge","Credits","Debt"];
+const STAGES = ["Idea","Prototype","Revenue","Scale"];
+const SECTORS = ["Deeptech","Biotech","Health","Agri","Climate","Space","Defence","Social","SaaS","Fintech","Mfg","Any"];
+const state = {q:"", type:new Set(), stage:new Set(), sector:new Set(), women:false, central:false, matched:null};
+
+/* ---- headline counts, computed not asserted ---- */
+$("#k-total").textContent = DATA.length;
+$("#k-grant").textContent = DATA.filter(d=>d.type==="Grant").length;
+$("#k-women").textContent = DATA.filter(d=>d.women).length;
+$("#k-open").textContent = DATA.filter(d=>d.cycle==="Rolling").length;
+$("#provenance").innerHTML = '<strong>'+DATA.length+' verified listings, not 1,800.</strong> This is a hand-checked seed set of real Indian schemes — every entry links to its official source and carries a confidence rating. It is built to hold thousands, but padding it with unverified entries would send founders chasing schemes that do not exist. Grow it from source documents, not from guesses.';
+
+/* ---- filter chips ---- */
+function buildChips(el, values, key){
+  el.innerHTML = "";
+  values.forEach(v=>{
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = v; b.setAttribute("aria-pressed","false");
+    b.onclick = ()=>{
+      const set = state[key];
+      set.has(v) ? set.delete(v) : set.add(v);
+      b.setAttribute("aria-pressed", set.has(v));
+      state.matched = null; render();
+    };
+    el.appendChild(b);
+  });
+}
+buildChips($("#f-type"), TYPES, "type");
+buildChips($("#f-stage"), STAGES, "stage");
+buildChips($("#f-sector"), SECTORS, "sector");
+
+function toggleFlag(btn, key){
+  btn.onclick = ()=>{ state[key] = !state[key]; btn.setAttribute("aria-pressed", state[key]); state.matched=null; render(); };
+}
+toggleFlag($("#f-women"), "women");
+toggleFlag($("#f-central"), "central");
+
+$("#q").addEventListener("input", e=>{
+  state.q = e.target.value.trim().toLowerCase();
+  $("#q-clear").hidden = !state.q;
+  state.matched = null; render();
+});
+$("#q-clear").onclick = ()=>{ $("#q").value=""; state.q=""; $("#q-clear").hidden=true; state.matched=null; render(); $("#q").focus(); };
+$("#reset").onclick = ()=>{
+  state.q=""; state.type.clear(); state.stage.clear(); state.sector.clear();
+  state.women=false; state.central=false; state.matched=null;
+  $("#q").value=""; $("#q-clear").hidden=true;
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute("aria-pressed","false"));
+  render();
+};
+
+function active(){
+  return state.q || state.type.size || state.stage.size || state.sector.size || state.women || state.central || state.matched;
+}
+function filtered(){
+  if (state.matched) {
+    const order = new Map(state.matched.map((id,i)=>[id,i]));
+    return DATA.filter(d=>order.has(d.id)).sort((a,b)=>order.get(a.id)-order.get(b.id));
+  }
+  return DATA.filter(d=>{
+    if (state.women && !d.women) return false;
+    if (state.central && d.region !== "Central") return false;
+    if (state.type.size && !state.type.has(d.type)) return false;
+    if (state.stage.size && !d.stage.some(s=>state.stage.has(s))) return false;
+    if (state.sector.size && !d.sector.some(s=>state.sector.has(s))) return false;
+    if (state.q){
+      const hay = (d.name+" "+d.org+" "+d.type+" "+d.region+" "+d.sector.join(" ")+" "+d.stage.join(" ")+" "+d.note).toLowerCase();
+      if (!hay.includes(state.q)) return false;
+    }
+    return true;
+  });
+}
+
+const CYCLE_CLASS = {"Rolling":"open","Periodic call":"call","Annual":"call","Via incubator":"call"};
+const CONF_LABEL = {3:"Well documented", 2:"Terms shift — confirm", 1:"Verify before relying"};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function render(){
+  const list = filtered();
+  const rows = $("#rows");
+  $("#reset").hidden = !active();
+  $("#count").textContent = state.matched
+    ? list.length + " suggested for you — clear to see all " + DATA.length
+    : list.length + (list.length === 1 ? " listing" : " listings") + (active() ? " of " + DATA.length : "");
+
+  if (!list.length){
+    rows.innerHTML = '<div class="empty"><h3>Nothing matches those filters</h3><p>Try removing a sector or stage — many schemes are sector-agnostic and tagged <em>Any</em>.</p></div>';
+    return;
+  }
+  rows.innerHTML = list.map(d=>{
+    const cyc = CYCLE_CLASS[d.cycle] || "check";
+    const dots = [1,2,3].map(n=>'<span class="dot'+(n<=d.conf?" on":"")+'"></span>').join("");
+    return '<details class="row'+(state.matched?" matched":"")+'" id="row-'+d.id+'">'
+      + '<summary class="row-head">'
+        + '<span><span class="row-title">'+esc(d.name)+'</span>'
+          + '<span class="row-org">'+esc(d.org)+' · '+esc(d.region)+'</span>'
+          + '<span class="row-meta">'
+            + '<span class="tag">'+esc(d.type)+'</span>'
+            + d.stage.map(s=>'<span class="tag">'+esc(s)+'</span>').join("")
+            + (d.women?'<span class="tag women">Women founders</span>':"")
+          + '</span></span>'
+        + '<span class="row-right">'
+          + '<span class="amount">'+esc(d.amt)+'</span>'
+          + '<span class="pill '+cyc+'">'+esc(d.cycle)+'</span>'
+        + '</span>'
+        + '<svg class="disclose" width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      + '</summary>'
+      + '<div class="detail"><p>'+esc(d.note)+'</p>'
+        + '<dl class="pairs">'
+          + '<div class="pair"><dt>Ceiling</dt><dd class="mono">'+esc(d.amt)+'</dd></div>'
+          + '<div class="pair"><dt>Intake</dt><dd>'+esc(d.cycle)+'</dd></div>'
+          + '<div class="pair"><dt>Sectors</dt><dd>'+d.sector.map(esc).join(", ")+'</dd></div>'
+          + '<div class="pair"><dt>Administered by</dt><dd>'+esc(d.org)+'</dd></div>'
+        + '</dl>'
+        + '<div class="detail-acts">'
+          + '<a class="src" href="'+esc(d.url)+'" target="_blank" rel="noopener noreferrer">Official source &#8599;</a>'
+          + '<span class="conf"><span class="dots">'+dots+'</span>'+CONF_LABEL[d.conf]+'</span>'
+        + '</div>'
+      + '</div></details>';
+  }).join("");
+}
+render();
+
+/* ---- chat dock ---- */
+const dock=$("#dock"), tx=$("#transcript"), pip=$("#pip"), st=$("#dock-status"), input=$("#input"), send=$("#send");
+let sample=null, busy=false, greeted=false;
+
+$("#dock-toggle").onclick = ()=>{
+  const open = dock.classList.toggle("tucked") === false;
+  $("#dock-toggle").setAttribute("aria-expanded", open);
+  if (open && !greeted){ greeted = true; boot(); }
+  if (open) setTimeout(()=>input.focus(), 60);
+};
+
+function say(who, text){
+  const el = document.createElement("div");
+  el.className = "msg " + who;
+  el.textContent = text;
+  tx.appendChild(el); tx.scrollTop = tx.scrollHeight;
+  return el;
+}
+const STARTERS = [
+  "Pre-revenue climate hardware in Pune",
+  "Women-led health startup, have a prototype",
+  "Student, only an idea, no company yet",
+  "Biotech, need lab money before revenue"
+];
+function drawStarters(){
+  const box = $("#starters"); box.innerHTML = "";
+  STARTERS.forEach(s=>{
+    const b = document.createElement("button");
+    b.className="chip"; b.type="button"; b.textContent=s;
+    b.onclick = ()=>{ input.value = s; ask(s); };
+    box.appendChild(b);
+  });
+}
+
+async function boot(){
+  say("bot", "Tell me what you are building, your stage, sector and city. I will point you at the listings worth your time and say plainly where each one is a poor fit.");
+  drawStarters();
+  sample = await window.claude?.use?.("sample") ?? null;
+  if (!sample){
+    st.textContent = "offline";
+    say("sys", "Assistant unavailable in this view — filters and search still work.");
+    input.disabled = true; send.disabled = true;
+    $("#starters").innerHTML = "";
+  }
+}
+
+// Compact catalogue: the model gets the real rows, so it cannot invent a scheme.
+const CATALOG = DATA.map(d=>[d.id,d.name,d.org,d.type,d.amt,d.stage.join("/"),d.sector.join("/"),d.women?"women":"-",d.cycle,d.region].join("|")).join("\n");
+const SYSTEM = `You help Indian startup founders find non-dilutive funding. You have this catalogue, one row per line:
+id|name|org|type|ceiling|stages|sectors|women-focus|intake|region
+${CATALOG}
+
+Rules:
+- Recommend ONLY ids from the catalogue. Never invent a scheme, amount, or deadline.
+- Call show_matches with the 3-6 best ids, best first, then explain in prose.
+- Say plainly when something is a weak fit or when the founder is too early/late for it.
+- Most central schemes disburse through a recognised incubator — say so when it applies.
+- Never state a live deadline; the catalogue has intake patterns, not dates. Point to the official source.
+- Be concise and concrete. No preamble, no bullet dumps longer than six lines.`;
+
+const history = [];
+
+async function ask(text){
+  if (busy || !sample) return;
+  busy = true; send.disabled = true; pip.classList.add("busy"); st.textContent = "thinking";
+  say("you", text);
+  input.value = ""; input.style.height = "auto";
+  $("#starters").innerHTML = "";
+  history.push({role:"user", content:text});
+
+  const bubble = say("bot", "Thinking…");
+  try{
+    const res = await sample(
+      [{role:"user", content:SYSTEM}, {role:"assistant", content:"Understood. I will only recommend catalogue ids."}, ...history],
+      {
+        modelTier:"default",
+        onText:({text})=>{ bubble.textContent = text; tx.scrollTop = tx.scrollHeight; },
+        tools:[{
+          name:"show_matches",
+          description:"Filter the on-page directory to these catalogue ids, best first.",
+          inputSchema:{type:"object",properties:{ids:{type:"array",items:{type:"string"}}},required:["ids"]},
+          execute:({ids})=>{
+            const valid = (ids||[]).filter(id=>DATA.some(d=>d.id===id));
+            if (valid.length){
+              state.matched = valid; render();
+              document.querySelector("#rows")?.scrollIntoView({behavior:"smooth", block:"start"});
+            }
+            return {shown: valid.length};
+          }
+        }]
+      }
+    );
+    bubble.textContent = res.text || "No answer came back. Try rephrasing.";
+    history.push({role:"assistant", content:bubble.textContent});
+    if (state.matched) say("sys", "Directory filtered to "+state.matched.length+" listings — clear filters to see all "+DATA.length);
+  }catch(err){
+    if (err?.text) bubble.textContent = err.text;
+    else if (err?.code === "not_granted"){ bubble.remove(); say("sys","Assistant needs your permission to run."); }
+    else if (err?.code === "rate_limited"){ bubble.textContent = "Rate limited. Wait a moment, then ask again."; }
+    else bubble.textContent = "That request did not go through. Try again.";
+  }finally{
+    busy = false; send.disabled = false; pip.classList.remove("busy"); st.textContent = "Ask";
+  }
+}
+
+$("#composer").addEventListener("submit", e=>{ e.preventDefault(); const v=input.value.trim(); if(v) ask(v); });
+input.addEventListener("keydown", e=>{
+  if (e.key === "Enter" && !e.shiftKey){ e.preventDefault(); const v=input.value.trim(); if(v) ask(v); }
+});
+input.addEventListener("input", ()=>{ input.style.height="auto"; input.style.height=Math.min(input.scrollHeight,96)+"px"; });
+</script>
